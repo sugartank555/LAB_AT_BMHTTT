@@ -1,4 +1,4 @@
-
+Bùi Hải Đường cntt1 1150080012
 ## Quá trình thực hiện
 
 Bài LAB 3 được thực hiện trên máy ảo Windows 11 bằng VMware Workstation. Máy ảo được cấu hình mạng Host-only và tạo snapshot sạch trước khi thực hành. Các công cụ được sử dụng gồm Microsoft Defender, PowerShell, Sysmon, Autoruns, Process Explorer, Wireshark và Python.
