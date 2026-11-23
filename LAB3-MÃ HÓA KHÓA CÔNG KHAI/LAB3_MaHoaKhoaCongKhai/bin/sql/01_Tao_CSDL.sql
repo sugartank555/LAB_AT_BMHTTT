@@ -1,0 +1,23 @@
+USE master;
+GO
+IF DB_ID(N'LAB3_MaHoaKhoaCongKhai') IS NULL CREATE DATABASE LAB3_MaHoaKhoaCongKhai;
+GO
+USE LAB3_MaHoaKhoaCongKhai;
+GO
+IF OBJECT_ID(N'dbo.History',N'U') IS NULL
+BEGIN
+ CREATE TABLE dbo.History (
+  Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+  Algorithm NVARCHAR(30) NOT NULL,
+  Operation NVARCHAR(12) NOT NULL,
+  InputLength INT NOT NULL,
+  Success BIT NOT NULL,
+  CreatedAt DATETIME2(0) NOT NULL DEFAULT SYSDATETIME(),
+  CONSTRAINT CK_Lab3_InputLength CHECK(InputLength>=0),
+  CONSTRAINT CK_Lab3_Operation CHECK(Operation IN (N'ENCRYPT',N'DECRYPT',N'SIGN',N'VERIFY'))
+ );
+END;
+GO
+SELECT DB_NAME() AS DatabaseName;
+SELECT TOP(10)* FROM dbo.History ORDER BY Id DESC;
+GO
